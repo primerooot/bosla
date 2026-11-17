@@ -1,0 +1,757 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
+  <meta name="description" content="مبادرة بوصلة - الإطار الوطني لتمكين الطلاب، اللجنة العلمية - اتحاد طلاب مدارس الدقهلية">
+  <meta name="theme-color" content="#0B3B5E">
+  <title>بوصلة | المبادرة الوطنية لتمكين الطلاب</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&family=Montserrat:wght@600;700&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome 6 -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+  <!-- AOS Animation -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    :root {
+      --primary: #0B3B5E;
+      --primary-light: #0f4c75;
+      --secondary: #2E8B57;
+      --accent: #FF8C00;
+      --light-bg: #F5F7FA;
+      --white: #FFFFFF;
+      --text-dark: #1a1a1a;
+      --text-gray: #4a4a4a;
+      --border: #e0e0e0;
+      --shadow-sm: 0 2px 12px rgba(0, 0, 0, 0.05);
+      --shadow-md: 0 6px 24px rgba(0, 0, 0, 0.08);
+      --shadow-lg: 0 12px 40px rgba(0, 0, 0, 0.12);
+      --radius: 16px;
+      --radius-sm: 10px;
+      --transition: 0.25s ease;
+    }
+
+    body {
+      font-family: 'Cairo', sans-serif;
+      background-color: var(--white);
+      color: var(--text-dark);
+      line-height: 1.7;
+      overflow-x: hidden;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* ===== TOP BAR ===== */
+    .top-bar {
+      background-color: #f0f2f5;
+      font-size: 0.85rem;
+      padding: 8px 0;
+      border-bottom: 1px solid var(--border);
+    }
+    .top-bar .container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+    .top-bar a {
+      color: var(--primary);
+      text-decoration: none;
+      margin-left: 16px;
+      font-weight: 600;
+    }
+    .top-bar a i {
+      margin-left: 6px;
+    }
+    .top-bar .brands {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+    }
+    .top-bar .brands img {
+      height: 38px;
+    }
+
+    /* ===== HEADER / NAVBAR ===== */
+    .header {
+      background-color: var(--white);
+      box-shadow: var(--shadow-sm);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      border-bottom: 2px solid var(--border);
+    }
+    .header .container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 12px 24px;
+    }
+    .logo-area {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .logo-icon {
+      font-size: 2.4rem;
+      color: var(--accent);
+    }
+    .logo-text {
+      font-size: 1.6rem;
+      font-weight: 800;
+      color: var(--primary);
+      letter-spacing: -0.5px;
+    }
+    .logo-text span {
+      color: var(--accent);
+    }
+
+    .nav-links {
+      display: flex;
+      list-style: none;
+      gap: 10px;
+    }
+    .nav-links a {
+      text-decoration: none;
+      color: var(--text-dark);
+      font-weight: 600;
+      padding: 8px 14px;
+      border-radius: 8px;
+      transition: var(--transition);
+      font-size: 0.95rem;
+    }
+    .nav-links a:hover {
+      background-color: rgba(11, 59, 94, 0.06);
+      color: var(--primary);
+    }
+    .btn-primary {
+      background-color: var(--accent);
+      color: white !important;
+      padding: 8px 20px !important;
+      border-radius: 30px !important;
+      font-weight: 700;
+    }
+    .btn-primary:hover {
+      background-color: #e07b00 !important;
+    }
+
+    .mobile-toggle {
+      display: none;
+      font-size: 1.8rem;
+      cursor: pointer;
+      color: var(--primary);
+    }
+
+    /* ===== HERO ===== */
+    .hero {
+      background: linear-gradient(135deg, #0B3B5E 0%, #0a2d44 100%);
+      color: white;
+      padding: 70px 0 80px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero::before {
+      content: "";
+      position: absolute;
+      top: -60px;
+      right: -60px;
+      width: 260px;
+      height: 260px;
+      background: rgba(255, 140, 0, 0.15);
+      border-radius: 50%;
+    }
+    .hero::after {
+      content: "";
+      position: absolute;
+      bottom: -40px;
+      left: -40px;
+      width: 200px;
+      height: 200px;
+      background: rgba(46, 139, 87, 0.2);
+      border-radius: 50%;
+    }
+    .hero .container {
+      position: relative;
+      z-index: 2;
+    }
+    .hero h1 {
+      font-size: 3rem;
+      font-weight: 800;
+      margin-bottom: 16px;
+      letter-spacing: -1px;
+    }
+    .hero .highlight {
+      color: var(--accent);
+    }
+    .hero p {
+      font-size: 1.2rem;
+      max-width: 700px;
+      margin: 0 auto 30px;
+      opacity: 0.9;
+    }
+    .hero-buttons {
+      display: flex;
+      gap: 16px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    .btn-hero {
+      padding: 14px 36px;
+      border-radius: 40px;
+      font-weight: 700;
+      font-size: 1rem;
+      text-decoration: none;
+      transition: var(--transition);
+    }
+    .btn-hero-primary {
+      background-color: var(--accent);
+      color: white;
+    }
+    .btn-hero-primary:hover {
+      background-color: #e07b00;
+    }
+    .btn-hero-outline {
+      background: transparent;
+      color: white;
+      border: 2px solid white;
+    }
+    .btn-hero-outline:hover {
+      background: white;
+      color: var(--primary);
+    }
+
+    /* ===== SECTION STYLES ===== */
+    section {
+      padding: 70px 0;
+    }
+    .section-title {
+      font-size: 2rem;
+      font-weight: 800;
+      color: var(--primary);
+      text-align: center;
+      margin-bottom: 12px;
+    }
+    .section-subtitle {
+      text-align: center;
+      color: var(--text-gray);
+      max-width: 650px;
+      margin: 0 auto 48px;
+      font-size: 1.05rem;
+    }
+
+    /* ===== WHY BAWSALA ===== */
+    .cards-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 28px;
+    }
+    .card {
+      background: var(--white);
+      border-radius: var(--radius);
+      padding: 32px 24px;
+      box-shadow: var(--shadow-md);
+      transition: var(--transition);
+      text-align: center;
+      border-top: 4px solid var(--accent);
+    }
+    .card:hover {
+      transform: translateY(-6px);
+      box-shadow: var(--shadow-lg);
+    }
+    .card .icon {
+      font-size: 2.6rem;
+      color: var(--accent);
+      margin-bottom: 18px;
+    }
+    .card h3 {
+      font-size: 1.3rem;
+      margin-bottom: 12px;
+      color: var(--primary);
+    }
+
+    /* ===== JOURNEY ===== */
+    .journey-steps {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+    }
+    .step {
+      background: var(--white);
+      border-radius: var(--radius);
+      padding: 28px 20px;
+      box-shadow: var(--shadow-md);
+      width: 180px;
+      text-align: center;
+      position: relative;
+      border-bottom: 4px solid var(--secondary);
+      transition: var(--transition);
+    }
+    .step:hover {
+      transform: translateY(-5px);
+    }
+    .step-number {
+      background: var(--primary);
+      color: white;
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 14px;
+      font-weight: 800;
+      font-size: 1.2rem;
+    }
+    .step h4 {
+      color: var(--primary);
+      margin-bottom: 6px;
+    }
+
+    /* ===== SDGs ===== */
+    .sdgs-grid {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 24px;
+    }
+    .sdg-item {
+      background: var(--white);
+      border-radius: var(--radius);
+      padding: 28px 18px;
+      box-shadow: var(--shadow-md);
+      width: 140px;
+      text-align: center;
+    }
+    .sdg-item img {
+      width: 70px;
+      margin-bottom: 12px;
+    }
+    .sdg-item p {
+      font-size: 0.85rem;
+      color: var(--text-gray);
+      font-weight: 600;
+    }
+
+    /* ===== PROGRAMS ===== */
+    .program-card {
+      background: var(--white);
+      border-radius: var(--radius);
+      padding: 28px;
+      box-shadow: var(--shadow-md);
+      border-right: 5px solid var(--secondary);
+      transition: var(--transition);
+    }
+    .program-card:hover {
+      box-shadow: var(--shadow-lg);
+    }
+    .program-card h4 {
+      color: var(--primary);
+      margin-bottom: 10px;
+      font-size: 1.2rem;
+    }
+
+    /* ===== AMBASSADORS ===== */
+    .ambassador-card {
+      background: var(--white);
+      border-radius: var(--radius);
+      padding: 24px;
+      box-shadow: var(--shadow-md);
+      text-align: center;
+    }
+    .ambassador-card img {
+      width: 90px;
+      height: 90px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-bottom: 14px;
+      border: 3px solid var(--accent);
+    }
+
+    /* ===== NEWS ===== */
+    .news-card {
+      background: var(--white);
+      border-radius: var(--radius);
+      overflow: hidden;
+      box-shadow: var(--shadow-md);
+      transition: var(--transition);
+    }
+    .news-card:hover {
+      transform: translateY(-4px);
+    }
+    .news-card .news-img {
+      height: 180px;
+      background-color: #ddd;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2.5rem;
+      color: var(--primary);
+    }
+    .news-card .news-body {
+      padding: 20px;
+    }
+
+    /* ===== FOOTER ===== */
+    .footer {
+      background-color: var(--primary);
+      color: white;
+      padding: 50px 0 20px;
+    }
+    .footer a {
+      color: #ccc;
+      text-decoration: none;
+    }
+    .footer a:hover {
+      color: white;
+    }
+    .footer-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 32px;
+      margin-bottom: 30px;
+    }
+    .footer-bottom {
+      border-top: 1px solid rgba(255,255,255,0.2);
+      padding-top: 20px;
+      text-align: center;
+      font-size: 0.9rem;
+      opacity: 0.8;
+    }
+
+    /* ===== RESPONSIVE ===== */
+    @media (max-width: 768px) {
+      .nav-links {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 70px;
+        right: 0;
+        background: white;
+        width: 100%;
+        box-shadow: var(--shadow-lg);
+        padding: 20px;
+        border-radius: 0 0 16px 16px;
+      }
+      .nav-links.show {
+        display: flex;
+      }
+      .mobile-toggle {
+        display: block;
+      }
+      .hero h1 {
+        font-size: 2rem;
+      }
+      .journey-steps {
+        flex-direction: column;
+        align-items: center;
+      }
+      .step {
+        width: 90%;
+      }
+      .sdg-item {
+        width: 100px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ==================== TOP BAR ==================== -->
+  <div class="top-bar">
+    <div class="container">
+      <div class="brands">
+        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='38' height='38' viewBox='0 0 24 24' fill='%230B3B5E'%3E%3Cpath d='M12 2L2 7v10c0 5.55 4.25 10.74 10 12 5.75-1.26 10-6.45 10-12V7l-10-5z'/%3E%3C/svg%3E" alt="شعار المديرية">
+        <span style="font-weight:700; color:#0B3B5E;">مديرية التربية والتعليم - الدقهلية</span>
+      </div>
+      <div>
+        <a href="tel:0501234567"><i class="fas fa-phone"></i> 050 1234567</a>
+        <a href="mailto:info@bawsala.eg"><i class="fas fa-envelope"></i> info@bawsala.eg</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==================== HEADER ==================== -->
+  <header class="header">
+    <div class="container">
+      <div class="logo-area">
+        <i class="fas fa-compass logo-icon"></i>
+        <div class="logo-text">بُوص<span>لة</span></div>
+      </div>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#">الرئيسية</a></li>
+        <li><a href="#about">عن بوصلة</a></li>
+        <li><a href="#journey">الرحلة</a></li>
+        <li><a href="#programs">البرامج</a></li>
+        <li><a href="#ambassadors">السفراء</a></li>
+        <li><a href="#news">الأخبار</a></li>
+        <li><a href="#contact" class="btn-primary">انضم الآن</a></li>
+      </ul>
+      <i class="fas fa-bars mobile-toggle" id="mobileToggle"></i>
+    </div>
+  </header>
+
+  <!-- ==================== HERO ==================== -->
+  <section class="hero">
+    <div class="container">
+      <h1 data-aos="fade-up">بوصلة: حيث يجد كل طالب <span class="highlight">اتجاهه</span></h1>
+      <p data-aos="fade-up" data-aos-delay="100">مبادرة اللجنة العلمية واتحاد طلاب الدقهلية – لبناء جيل واعٍ، مفكر، منتج، وقائد.</p>
+      <div class="hero-buttons" data-aos="fade-up" data-aos-delay="200">
+        <a href="#contact" class="btn-hero btn-hero-primary">انضم إلى الرحلة</a>
+        <a href="#about" class="btn-hero btn-hero-outline">استكشف البرامج</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== لماذا بوصلة ==================== -->
+  <section id="about" style="background-color: var(--light-bg);">
+    <div class="container">
+      <h2 class="section-title" data-aos="fade-up">لماذا <span style="color:var(--accent);">بوصلة</span>؟</h2>
+      <p class="section-subtitle" data-aos="fade-up">ليست ورشة عابرة ولا دورة برمجة... بل إطار متكامل يعيد تعريف دور الطالب.</p>
+      <div class="cards-grid">
+        <div class="card" data-aos="fade-up" data-aos-delay="50">
+          <div class="icon"><i class="fas fa-search"></i></div>
+          <h3>اكتشاف الذات</h3>
+          <p>مساعدة الطالب على فهم قيمه ونقاط قوته وبناء بوصلته الشخصية.</p>
+        </div>
+        <div class="card" data-aos="fade-up" data-aos-delay="150">
+          <div class="icon"><i class="fas fa-brain"></i></div>
+          <h3>تفكير ناقد</h3>
+          <p>ورش علمية ومناظرات لتحليل المشكلات واتخاذ قرارات مبنية على أدلة.</p>
+        </div>
+        <div class="card" data-aos="fade-up" data-aos-delay="250">
+          <div class="icon"><i class="fas fa-laptop-code"></i></div>
+          <h3>مهارات تقنية</h3>
+          <p>البرمجة من الجذور، الذكاء الاصطناعي، والأمن السيبراني كأدوات للحل.</p>
+        </div>
+        <div class="card" data-aos="fade-up" data-aos-delay="350">
+          <div class="icon"><i class="fas fa-users"></i></div>
+          <h3>قيادة وتأثير</h3>
+          <p>برنامج سفراء، إدارة فعاليات، ومبادرات مجتمعية حقيقية.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== رحلة الطالب ==================== -->
+  <section id="journey">
+    <div class="container">
+      <h2 class="section-title" data-aos="fade-up">رحلة الطالب في 5 محطات</h2>
+      <p class="section-subtitle" data-aos="fade-up">مسار تراكمي من الداخل إلى الخارج، كل مرحلة تُبنى على سابقتها.</p>
+      <div class="journey-steps">
+        <div class="step" data-aos="zoom-in" data-aos-delay="0">
+          <div class="step-number">1</div>
+          <h4>اكتشف</h4>
+          <p>من أنا؟ قيمي، أهدافي</p>
+        </div>
+        <div class="step" data-aos="zoom-in" data-aos-delay="100">
+          <div class="step-number">2</div>
+          <h4>فكّر</h4>
+          <p>كيف أفكر؟ نقد وحلول</p>
+        </div>
+        <div class="step" data-aos="zoom-in" data-aos-delay="200">
+          <div class="step-number">3</div>
+          <h4>تعلّم</h4>
+          <p>برمجة، ذكاء اصطناعي</p>
+        </div>
+        <div class="step" data-aos="zoom-in" data-aos-delay="300">
+          <div class="step-number">4</div>
+          <h4>طبّق</h4>
+          <p>مشاريع حقيقية</p>
+        </div>
+        <div class="step" data-aos="zoom-in" data-aos-delay="400">
+          <div class="step-number">5</div>
+          <h4>قُد</h4>
+          <p>سفراء، مجتمع، أثر</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== أهداف التنمية المستدامة ==================== -->
+  <section style="background-color: var(--light-bg);">
+    <div class="container">
+      <h2 class="section-title" data-aos="fade-up">أهداف التنمية المستدامة</h2>
+      <p class="section-subtitle" data-aos="fade-up">تخدم "بوصلة" خمسة أهداف استراتيجية من رؤية مصر 2030 وأجندة الأمم المتحدة.</p>
+      <div class="sdgs-grid">
+        <div class="sdg-item" data-aos="flip-left"><img src="https://sdgs.un.org/sites/default/files/goals/E_SDG_Icons-04.jpg" alt="هدف 4"><p>تعليم جيد</p></div>
+        <div class="sdg-item" data-aos="flip-left" data-aos-delay="100"><img src="https://sdgs.un.org/sites/default/files/goals/E_SDG_Icons-08.jpg" alt="هدف 8"><p>عمل لائق</p></div>
+        <div class="sdg-item" data-aos="flip-left" data-aos-delay="200"><img src="https://sdgs.un.org/sites/default/files/goals/E_SDG_Icons-09.jpg" alt="هدف 9"><p>صناعة وابتكار</p></div>
+        <div class="sdg-item" data-aos="flip-left" data-aos-delay="300"><img src="https://sdgs.un.org/sites/default/files/goals/E_SDG_Icons-16.jpg" alt="هدف 16"><p>مؤسسات قوية</p></div>
+        <div class="sdg-item" data-aos="flip-left" data-aos-delay="400"><img src="https://sdgs.un.org/sites/default/files/goals/E_SDG_Icons-17.jpg" alt="هدف 17"><p>شراكات</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== البرامج والمسارات ==================== -->
+  <section id="programs">
+    <div class="container">
+      <h2 class="section-title" data-aos="fade-up">البرامج والمسارات</h2>
+      <p class="section-subtitle" data-aos="fade-up">أربعة برامج محورية تغطي كافة أبعاد التمكين.</p>
+      <div class="cards-grid">
+        <div class="program-card" data-aos="fade-right">
+          <h4><i class="fas fa-user-circle" style="color:var(--accent); margin-left:8px;"></i>اكتشف ذاتك</h4>
+          <p>جلسات إرشاد وبناء خريطة الحياة الشخصية.</p>
+        </div>
+        <div class="program-card" data-aos="fade-left">
+          <h4><i class="fas fa-flask" style="color:var(--secondary); margin-left:8px;"></i>مختبر المهارات</h4>
+          <p>معسكرات تقنية، برمجة، ذكاء اصطناعي وأمن سيبراني.</p>
+        </div>
+        <div class="program-card" data-aos="fade-right">
+          <h4><i class="fas fa-lightbulb" style="color:var(--accent); margin-left:8px;"></i>مختبر المشروعات</h4>
+          <p>حاضنة أفكار ودعم فني لمشاريع الطلاب.</p>
+        </div>
+        <div class="program-card" data-aos="fade-left">
+          <h4><i class="fas fa-flag" style="color:var(--secondary); margin-left:8px;"></i>سفراء بوصلة</h4>
+          <p>تدريب TOT وتأهيل قيادات طلابية مستدامة.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== سفراء بوصلة ==================== -->
+  <section id="ambassadors" style="background-color: var(--light-bg);">
+    <div class="container">
+      <h2 class="section-title" data-aos="fade-up">سفراء <span style="color:var(--accent);">بوصلة</span></h2>
+      <p class="section-subtitle" data-aos="fade-up">طلاب متميزون يقودون التغيير في مدارسهم ويدربون أقرانهم.</p>
+      <div class="cards-grid">
+        <div class="ambassador-card" data-aos="zoom-in">
+          <i class="fas fa-user-graduate" style="font-size:4rem; color:var(--primary); margin-bottom:10px;"></i>
+          <h4>أحمد محمد</h4>
+          <p>مدرسة المنصورة الثانوية</p>
+        </div>
+        <div class="ambassador-card" data-aos="zoom-in" data-aos-delay="100">
+          <i class="fas fa-user-graduate" style="font-size:4rem; color:var(--primary); margin-bottom:10px;"></i>
+          <h4>منى السيد</h4>
+          <p>مدرسة طلخا الإعدادية</p>
+        </div>
+        <div class="ambassador-card" data-aos="zoom-in" data-aos-delay="200">
+          <i class="fas fa-user-graduate" style="font-size:4rem; color:var(--primary); margin-bottom:10px;"></i>
+          <h4>يوسف عادل</h4>
+          <p>مدرسة ميت غمر الثانوية</p>
+        </div>
+        <div class="ambassador-card" data-aos="zoom-in" data-aos-delay="300">
+          <i class="fas fa-user-graduate" style="font-size:4rem; color:var(--primary); margin-bottom:10px;"></i>
+          <h4>ندى علي</h4>
+          <p>مدرسة السنبلاوين الإعدادية</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== الأخبار ==================== -->
+  <section id="news">
+    <div class="container">
+      <h2 class="section-title" data-aos="fade-up">آخر الأخبار والفعاليات</h2>
+      <div class="cards-grid">
+        <div class="news-card" data-aos="fade-up">
+          <div class="news-img"><i class="fas fa-calendar-alt"></i></div>
+          <div class="news-body">
+            <h4>هاكاثون "بوصلة البرمجي"</h4>
+            <p>مسابقة برمجة مكثفة لحل تحديات حقيقية في المدارس.</p>
+          </div>
+        </div>
+        <div class="news-card" data-aos="fade-up" data-aos-delay="100">
+          <div class="news-img"><i class="fas fa-trophy"></i></div>
+          <div class="news-body">
+            <h4>تكريم الدفعة الأولى من السفراء</h4>
+            <p>حفل ختامي لتوزيع شهادات السفراء المتميزين.</p>
+          </div>
+        </div>
+        <div class="news-card" data-aos="fade-up" data-aos-delay="200">
+          <div class="news-img"><i class="fas fa-robot"></i></div>
+          <div class="news-body">
+            <h4>تحدي الذكاء الاصطناعي</h4>
+            <p>بناء نماذج تصنيف لحل مشكلات مجتمعية.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== اتصل بنا ==================== -->
+  <section id="contact" style="background-color: var(--light-bg);">
+    <div class="container">
+      <h2 class="section-title" data-aos="fade-up">انضم إلى بوصلة</h2>
+      <p class="section-subtitle" data-aos="fade-up">سجل بياناتك للانضمام أو للاستفسار.</p>
+      <form style="max-width:600px; margin:0 auto; background:white; padding:36px; border-radius:var(--radius); box-shadow:var(--shadow-md);" data-aos="fade-up">
+        <div style="display:flex; flex-direction:column; gap:16px;">
+          <input type="text" placeholder="الاسم الكامل" required style="padding:12px; border:1px solid var(--border); border-radius:8px; font-family: inherit;">
+          <input type="email" placeholder="البريد الإلكتروني" required style="padding:12px; border:1px solid var(--border); border-radius:8px; font-family: inherit;">
+          <select style="padding:12px; border:1px solid var(--border); border-radius:8px; font-family: inherit;">
+            <option>طالب</option><option>معلم</option><option>ولي أمر</option><option>إداري</option>
+          </select>
+          <textarea rows="4" placeholder="رسالتك أو استفسارك" style="padding:12px; border:1px solid var(--border); border-radius:8px; font-family: inherit;"></textarea>
+          <button type="submit" class="btn-hero btn-hero-primary" style="border:none; cursor:pointer;">إرسال</button>
+        </div>
+      </form>
+    </div>
+  </section>
+
+  <!-- ==================== FOOTER ==================== -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <h3 style="color:white; margin-bottom:12px;"><i class="fas fa-compass"></i> بوصلة</h3>
+          <p style="opacity:0.85;">مبادرة وطنية لتمكين الطلاب تحت مظلة الاتحادات الطلابية.</p>
+        </div>
+        <div>
+          <h4 style="color:white; margin-bottom:12px;">روابط سريعة</h4>
+          <p><a href="#">الرئيسية</a></p>
+          <p><a href="#about">عن بوصلة</a></p>
+          <p><a href="#programs">البرامج</a></p>
+          <p><a href="#news">الأخبار</a></p>
+        </div>
+        <div>
+          <h4 style="color:white; margin-bottom:12px;">تواصل معنا</h4>
+          <p><i class="fas fa-map-marker-alt"></i> مديرية التربية والتعليم - المنصورة</p>
+          <p><i class="fas fa-phone"></i> 050 1234567</p>
+          <p><i class="fas fa-envelope"></i> info@bawsala.eg</p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        جميع الحقوق محفوظة – اللجنة العلمية – اتحاد طلاب الدقهلية © 2025
+      </div>
+    </div>
+  </footer>
+
+  <!-- ==================== SCRIPTS ==================== -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init({ duration: 700, once: true });
+
+    const toggle = document.getElementById('mobileToggle');
+    const navLinks = document.getElementById('navLinks');
+    toggle.addEventListener('click', () => {
+      navLinks.classList.toggle('show');
+    });
+
+    // Close menu on link click (mobile)
+    document.querySelectorAll('.nav-links a').forEach(link => {
+      link.addEventListener('click', () => {
+        navLinks.classList.remove('show');
+      });
+    });
+  </script>
+
+</body>
+</html>
